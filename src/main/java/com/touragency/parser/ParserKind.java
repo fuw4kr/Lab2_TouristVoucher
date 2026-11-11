@@ -4,7 +4,8 @@ import java.util.function.Supplier;
 
 /** The parsing technologies the application supports. */
 public enum ParserKind {
-    DOM(DomVoucherParser::new);
+    DOM(DomVoucherParser::new),
+    SAX(SaxVoucherParser::new);
 
     private final Supplier<VoucherStreamParser> constructor;
 
