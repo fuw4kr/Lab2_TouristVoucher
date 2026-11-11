@@ -13,6 +13,7 @@ public final class SampleFiles {
     /** The document, the schema and the stylesheet of the application itself. */
     public static final Path MAIN_XML = resource("tourist-voucher.xml");
     public static final Path XSD = resource("tourist-voucher.xsd");
+    public static final Path XSL = resource("tourist-voucher.xsl");
 
     /** Three valid vouchers: v-101 (Greece), v-102 (Czech Republic), v-103 (Israel). */
     public static final Path SAMPLE_XML = resource("vouchers-sample.xml");
