@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TouristVoucher xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="tourist-voucher.xsd">
+
+    <Voucher id="v-001">
+        <Type>rest</Type>
+        <Country>Greece</Country>
+        <NumberDaysNights days="8" nights="7"/>
+        <Transport>air</Transport>
+        <HotelCharacteristic>
+            <Stars>4</Stars>
+            <Meal>AI</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="EUR">
+            <Total>1250.00</Total>
+            <Service price="420.00">flight</Service>
+            <Service price="760.00">hotel</Service>
+            <Service price="70.00">transfer</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-002">
+        <Type>excursion</Type>
+        <Country>Italy</Country>
+        <NumberDaysNights days="6" nights="5"/>
+        <Transport>auto</Transport>
+        <HotelCharacteristic>
+            <Stars>3</Stars>
+            <Meal>BB</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>false</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="EUR">
+            <Total>540.00</Total>
+            <Service price="180.00">bus</Service>
+            <Service price="250.00">hotel</Service>
+            <Service price="110.00">excursions</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-003">
+        <Type>weekend</Type>
+        <Country>Poland</Country>
+        <NumberDaysNights days="3" nights="2"/>
+        <Transport>railway</Transport>
+        <HotelCharacteristic>
+            <Stars>3</Stars>
+            <Meal>BB</Meal>
+            <RoomType>1</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>false</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="UAH">
+            <Total>9800.00</Total>
+            <Service price="3200.00">train tickets</Service>
+            <Service price="5400.00">hotel</Service>
+            <Service price="1200.00">city tour</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-004">
+        <Type>pilgrimage</Type>
+        <Country>Israel</Country>
+        <NumberDaysNights days="7" nights="6"/>
+        <Transport>air</Transport>
+        <HotelCharacteristic>
+            <Stars>2</Stars>
+            <Meal>HB</Meal>
+            <RoomType>3</RoomType>
+            <Tv>false</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="USD">
+            <Total>980.00</Total>
+            <Service price="450.00">flight</Service>
+            <Service price="380.00">hotel</Service>
+            <Service price="150.00">guide</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-005">
+        <Type>rest</Type>
+        <Country>Norway</Country>
+        <NumberDaysNights days="10" nights="9"/>
+        <Transport>liner</Transport>
+        <HotelCharacteristic>
+            <Stars>5</Stars>
+            <Meal>AI</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="EUR">
+            <Total>2400.00</Total>
+            <Service price="2100.00">cruise cabin</Service>
+            <Service price="300.00">shore excursions</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-006">
+        <Type>weekend</Type>
+        <Country>Ukraine</Country>
+        <NumberDaysNights days="2" nights="1"/>
+        <Transport>auto</Transport>
+        <HotelCharacteristic>
+            <Stars>4</Stars>
+            <Meal>none</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>false</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="UAH">
+            <Total>4200.00</Total>
+            <Service price="900.00">bus</Service>
+            <Service price="3300.00">hotel</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-007">
+        <Type>excursion</Type>
+        <Country>Czech Republic</Country>
+        <NumberDaysNights days="5" nights="4"/>
+        <Transport>railway</Transport>
+        <HotelCharacteristic>
+            <Stars>4</Stars>
+            <Meal>HB</Meal>
+            <RoomType>1</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="EUR">
+            <Total>610.00</Total>
+            <Service price="140.00">train tickets</Service>
+            <Service price="340.00">hotel</Service>
+            <Service price="130.00">excursions</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-008">
+        <Type>pilgrimage</Type>
+        <Country>Ukraine</Country>
+        <NumberDaysNights days="1" nights="0"/>
+        <Transport>auto</Transport>
+        <HotelCharacteristic>
+            <Stars>1</Stars>
+            <Meal>none</Meal>
+            <RoomType>3</RoomType>
+            <Tv>false</Tv>
+            <AirConditioner>false</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="UAH">
+            <Total>850.00</Total>
+            <Service price="600.00">bus</Service>
+            <Service price="250.00">guide</Service>
+        </Cost>
+    </Voucher>
+</TouristVoucher>

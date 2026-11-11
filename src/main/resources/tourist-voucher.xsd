@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation>
+            Variant 13. Tourist vouchers offered by a travel agency.
+            The root element "TouristVoucher" contains "Voucher" elements.
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="TouristVoucher">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Voucher" type="VoucherType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ============ complex types ============ -->
+
+    <xs:complexType name="VoucherType">
+        <xs:sequence>
+            <xs:element name="Type" type="TourKind"/>
+            <xs:element name="Country" type="CountryName"/>
+            <xs:element name="NumberDaysNights" type="DaysNights"/>
+            <xs:element name="Transport" type="TransportKind"/>
+            <xs:element name="HotelCharacteristic" type="HotelCharacteristic"/>
+            <xs:element name="Cost" type="Cost"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="VoucherId" use="required"/>
+    </xs:complexType>
+
+    <!-- number of days and nights of the trip -->
+    <xs:complexType name="DaysNights">
+        <xs:attribute name="days" type="DayCount" use="required"/>
+        <xs:attribute name="nights" type="NightCount" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="HotelCharacteristic">
+        <xs:sequence>
+            <xs:element name="Stars" type="StarCount"/>
+            <xs:element name="Meal" type="MealKind"/>
+            <xs:element name="RoomType" type="RoomPlaces"/>
+            <xs:element name="Tv" type="xs:boolean"/>
+            <xs:element name="AirConditioner" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- total price of the voucher and what exactly is included in it -->
+    <xs:complexType name="Cost">
+        <xs:sequence>
+            <xs:element name="Total" type="PositiveMoney"/>
+            <xs:element name="Service" type="IncludedService" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="currency" type="Currency" use="required"/>
+    </xs:complexType>
+
+    <!-- an element with text (name of the service) and an attribute (its price) -->
+    <xs:complexType name="IncludedService">
+        <xs:simpleContent>
+            <xs:extension base="ShortText">
+                <xs:attribute name="price" type="Money" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- ============ simple types ============ -->
+
+    <xs:simpleType name="VoucherId">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="v-[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ShortText">
+        <xs:restriction base="xs:token">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="60"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CountryName">
+        <xs:restriction base="ShortText">
+            <xs:pattern value="[A-Z][A-Za-z .'\-]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TourKind">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="weekend"/>
+            <xs:enumeration value="excursion"/>
+            <xs:enumeration value="rest"/>
+            <xs:enumeration value="pilgrimage"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TransportKind">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="air"/>
+            <xs:enumeration value="railway"/>
+            <xs:enumeration value="auto"/>
+            <xs:enumeration value="liner"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- none - meals are not included, BB - bed and breakfast, HB - half board, AI - all inclusive -->
+    <xs:simpleType name="MealKind">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="none"/>
+            <xs:enumeration value="BB"/>
+            <xs:enumeration value="HB"/>
+            <xs:enumeration value="AI"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Currency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UAH"/>
+            <xs:enumeration value="USD"/>
+            <xs:enumeration value="EUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DayCount">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="90"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="NightCount">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="90"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StarCount">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 1, 2 or 3 places in the room -->
+    <xs:simpleType name="RoomPlaces">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Money">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PositiveMoney">
+        <xs:restriction base="Money">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
