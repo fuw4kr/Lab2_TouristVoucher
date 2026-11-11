@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Three vouchers with values the parser tests know by heart. -->
+<TouristVoucher xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="tourist-voucher.xsd">
+
+    <Voucher id="v-101">
+        <Type>rest</Type>
+        <Country>Greece</Country>
+        <NumberDaysNights days="8" nights="7"/>
+        <Transport>air</Transport>
+        <HotelCharacteristic>
+            <Stars>4</Stars>
+            <Meal>AI</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="EUR">
+            <Total>1250.00</Total>
+            <Service price="420.00">flight</Service>
+            <Service price="760.00">hotel</Service>
+            <Service price="70.00">transfer</Service>
+        </Cost>
+    </Voucher>
+
+    <!-- text with line breaks around it, CDATA and booleans written as 1 / 0 -->
+    <Voucher id="v-102">
+        <Type>weekend</Type>
+        <Country>
+            Czech Republic
+        </Country>
+        <NumberDaysNights days="2" nights="1"/>
+        <Transport>auto</Transport>
+        <HotelCharacteristic>
+            <Stars>3</Stars>
+            <Meal>none</Meal>
+            <RoomType>1</RoomType>
+            <Tv>1</Tv>
+            <AirConditioner>0</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="UAH">
+            <Total>4200.00</Total>
+            <Service price="900.00"><![CDATA[bus]]></Service>
+            <Service price="3300.00">hotel</Service>
+        </Cost>
+    </Voucher>
+
+    <Voucher id="v-103">
+        <Type>pilgrimage</Type>
+        <Country>Israel</Country>
+        <NumberDaysNights days="7" nights="6"/>
+        <Transport>air</Transport>
+        <HotelCharacteristic>
+            <Stars>2</Stars>
+            <Meal>HB</Meal>
+            <RoomType>3</RoomType>
+            <Tv>false</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="USD">
+            <Total>980.00</Total>
+            <Service price="450.00">flight</Service>
+            <Service price="380.00">hotel</Service>
+            <Service price="150.00">guide</Service>
+        </Cost>
+    </Voucher>
+</TouristVoucher>

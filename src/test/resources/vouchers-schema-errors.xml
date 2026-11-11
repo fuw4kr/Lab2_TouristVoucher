@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The document is well-formed but does not match the schema. -->
+<TouristVoucher>
+    <!-- wrong type, six stars, no "nights" attribute, unknown currency -->
+    <Voucher id="v-001">
+        <Type>business</Type>
+        <Country>Greece</Country>
+        <NumberDaysNights days="8"/>
+        <Transport>air</Transport>
+        <HotelCharacteristic>
+            <Stars>6</Stars>
+            <Meal>AI</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>true</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="GBP">
+            <Total>1250.00</Total>
+            <Service price="1250.00">everything</Service>
+        </Cost>
+    </Voucher>
+
+    <!-- the same id again, nothing is included in the cost -->
+    <Voucher id="v-001">
+        <Type>rest</Type>
+        <Country>Italy</Country>
+        <NumberDaysNights days="6" nights="5"/>
+        <Transport>auto</Transport>
+        <HotelCharacteristic>
+            <Stars>3</Stars>
+            <Meal>BB</Meal>
+            <RoomType>2</RoomType>
+            <Tv>true</Tv>
+            <AirConditioner>false</AirConditioner>
+        </HotelCharacteristic>
+        <Cost currency="EUR">
+            <Total>540.00</Total>
+        </Cost>
+    </Voucher>
+</TouristVoucher>
