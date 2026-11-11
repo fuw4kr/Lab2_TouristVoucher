@@ -1,0 +1,28 @@
+# Build
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Files produced by the application
+logs/
+*.log
+output/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
